@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "235712484368",
+    "project_id": "decorview-de0f3",
+    "storage_bucket": "decorview-de0f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235712484368:android:374f2793d8beec0210e695",
+        "android_client_info": {
+          "package_name": "com.oopsie.decorview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "235712484368-b4rco4jki0pc3vlh1asced4ju8th9m8t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.oopsie.decorview",
+            "certificate_hash": "e2e4377324398a16cc53c8da04dd1f45b784e8ae"
+          }
+        },
+        {
+          "client_id": "235712484368-7g5o3plelr37l93c1f09rarv7ef6bsdr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVr0Njbv-hRgHBo7DKlzizxOk9_YJoQYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "235712484368-7g5o3plelr37l93c1f09rarv7ef6bsdr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
