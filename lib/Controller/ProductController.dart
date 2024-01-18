@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uuid/uuid.dart';
 
-import '../Models/ProductModel.dart';
+import '../Models/product_model.dart';
 
 class ProductController extends GetxController {
   FirebaseFirestore fireStore = FirebaseFirestore.instance;

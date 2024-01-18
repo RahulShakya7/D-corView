@@ -1,4 +1,4 @@
-package com.example.fyp
+package com.oopsie.decorview
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 

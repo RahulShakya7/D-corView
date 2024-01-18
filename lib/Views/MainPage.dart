@@ -58,8 +58,7 @@ class _MainPageState extends State<MainPage> {
         onRefresh: () async {
           Future.delayed(const Duration(seconds: 2), () async {
             await product.catGet();
-
-            print(product.categories);
+            // print(product.categories);
           });
         },
         child: SingleChildScrollView(
@@ -81,7 +80,7 @@ class _MainPageState extends State<MainPage> {
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (BuildContext context, int index) => Column(
                         children: [
-                          Container(
+                          SizedBox(
                             height: 75.0,
                             width: 100,
                             child: InkWell(
@@ -160,7 +159,8 @@ class _MainPageState extends State<MainPage> {
                           margin: const EdgeInsets.all(6),
                           shape: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
-                              borderSide: const BorderSide(color: Colors.black26)),
+                              borderSide:
+                                  const BorderSide(color: Colors.black26)),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Row(
