@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class UploadDataButton extends StatefulWidget {
   String text;
   Function onPressed;
-  UploadDataButton({Key? key, required this.onPressed, required this.text})
-      : super(key: key);
+  UploadDataButton({super.key, required this.onPressed, required this.text});
 
   @override
   State<UploadDataButton> createState() => _UploadDataButtonState();
