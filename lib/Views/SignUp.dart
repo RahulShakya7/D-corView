@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 import 'SignUpWithPhone.dart';
 
 class SignUp extends StatefulWidget {
-  const SignUp({Key? key}) : super(key: key);
+  const SignUp({super.key});
 
   @override
   State<SignUp> createState() => _SignUpState();
@@ -176,7 +176,8 @@ class _SignUpState extends State<SignUp> {
                               },
                               child: SizedBox(
                                   height: 50,
-                                  child: Image.asset('images/google.png')),
+                                  child:
+                                      Image.asset('assets/images/google.png')),
                             ),
                             InkWell(
                               onTap: () {

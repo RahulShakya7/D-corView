@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import '../Controller/CartController.dart';
 
 class Cart extends StatefulWidget {
-  const Cart({Key? key}) : super(key: key);
+  const Cart({super.key});
 
   @override
   State<Cart> createState() => _CartState();
@@ -52,7 +52,7 @@ class _CartState extends State<Cart> {
               padding: const EdgeInsets.only(top: 28.0),
               child: Column(
                 children: [
-                  Center(child: Image.asset('images/noOrders.png')),
+                  Center(child: Image.asset('assets/images/noOrders.png')),
                   const SizedBox(
                     height: 50,
                   ),
@@ -88,7 +88,7 @@ class _CartState extends State<Cart> {
                             setState(() {
                               cart.totalAmount.value = cart.totalAmount.value -
                                   double.parse(linePrice[index].text);
-                              print(linePrice[index].text);
+                              // print(linePrice[index].text);
                               linePrice.remove(linePrice[index]);
                               cart.quantity.remove(cart.quantity[index]);
                               cart.cartList.removeAt(index);

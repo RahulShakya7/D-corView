@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fyp/Controller/ProductController.dart';
 import 'package:fyp/Views/ProductDetailsPage.dart';
-import 'package:fyp/Views/cartPage.dart';
+import 'package:fyp/Views/CartPage.dart';
 import 'package:get/get.dart';
 
 class AllProducts extends StatefulWidget {
-  const AllProducts({Key? key}) : super(key: key);
+  const AllProducts({super.key});
 
   @override
   State<AllProducts> createState() => _AllProductsState();
@@ -63,7 +63,8 @@ class _AllProductsState extends State<AllProducts> {
                         margin: const EdgeInsets.all(6),
                         shape: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(color: Colors.black26)),
+                            borderSide:
+                                const BorderSide(color: Colors.black26)),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Row(

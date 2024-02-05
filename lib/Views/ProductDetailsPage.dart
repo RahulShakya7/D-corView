@@ -4,8 +4,8 @@ import 'package:fyp/Controller/ProductController.dart';
 import 'package:get/get.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
 
+import 'CartPage.dart';
 import 'CheckOut.dart';
-import 'cartPage.dart';
 
 class ProductDetails extends StatefulWidget {
   const ProductDetails({super.key});
@@ -42,14 +42,22 @@ class _ProductDetailsState extends State<ProductDetails> {
               height: MediaQuery.of(context).size.height * 0.41,
               child: Stack(alignment: Alignment.topRight, children: [
                 ModelViewer(
-                  backgroundColor:
-                      Get.isDarkMode ? Colors.black : Colors.white12,
+                  backgroundColor: Get.isDarkMode ? Colors.white : Colors.black,
                   src: product.prodModelUrl.value, // a bundled asset file
                   ar: true,
                   arPlacement: ArPlacement.floor,
                   autoRotate: true,
                   cameraControls: true,
                 ),
+                // SizedBox(
+                //   height: 380,
+                //   width: 380,
+                //   child: Image.network(product.prodImageUrl.value),
+                //   // child: ModelViewer(
+                //   //       src: '${product.products[index].modelUrl}', // a bundled asset file
+                //   //
+                //   //   ),
+                // ),
                 // ModelView(url: product.prodModelUrl.value),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -85,18 +93,19 @@ class _ProductDetailsState extends State<ProductDetails> {
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(16.0),
+                      padding:
+                          const EdgeInsets.only(top: 35, left: 20, right: 20),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             product.prodName.value,
                             style: const TextStyle(
-                              fontSize: 20,
+                              fontSize: 28,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                           Text(
+                          Text(
                             "Rs.${product.prodPrice.value}",
                             style: const TextStyle(
                                 fontSize: 20,
@@ -108,27 +117,23 @@ class _ProductDetailsState extends State<ProductDetails> {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
-                          top: 20.0, left: 20.0, right: 20.0, bottom: 10),
+                          top: 10.0, left: 20.0, right: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const Text(
-                            'Desciption:',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
                           const SizedBox(
                             height: 10,
                           ),
                           SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.32,
+                            height: MediaQuery.of(context).size.height * 0.28,
                             child: SingleChildScrollView(
                               child: Column(
                                 children: [
-                                  Text('${product.prodDesc}'),
+                                  Text(
+                                    '${product.prodDesc}',
+                                    textAlign: TextAlign.left,
+                                  ),
                                 ],
                               ),
                             ),
@@ -137,7 +142,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                       ),
                     ),
                     Expanded(
-                      child: Row(
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           InkWell(
@@ -167,21 +172,19 @@ class _ProductDetailsState extends State<ProductDetails> {
                             },
                             child: const SizedBox(
                               height: 60,
-                              width: 110,
+                              width: 350,
                               child: Card(
-                                color: Colors.red,
+                                color: Colors.green,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(20.0),
-                                      topLeft: Radius.circular(20.0),
-                                      topRight: Radius.circular(40.0)),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.elliptical(5, 5)),
                                   side: BorderSide(
                                       color: Colors.grey, width: 0.7),
                                 ),
                                 elevation: 5,
                                 margin: EdgeInsets.symmetric(
                                     horizontal: 0, vertical: 10),
-                                child: Center(child: Text('ADD TO CART')),
+                                child: Center(child: Text('Add to Cart')),
                               ),
                             ),
                           ),
@@ -192,7 +195,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                   double.parse(product.prodPrice.value),
                                   product.prodModelUrl.value,
                                   product.prodImageUrl.value);
-                              print(cart.buyList.value);
+                              // print(cart.buyList.value);
                               Get.to(() => const Checkout(), arguments: [
                                 buyNow,
                                 product.prodPrice.toString()
@@ -200,21 +203,19 @@ class _ProductDetailsState extends State<ProductDetails> {
                             },
                             child: const SizedBox(
                               height: 60,
-                              width: 110,
+                              width: 350,
                               child: Card(
                                 color: Colors.green,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(40.0),
-                                      bottomRight: Radius.circular(20.0),
-                                      topRight: Radius.circular(20.0)),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.elliptical(5, 5)),
                                   side: BorderSide(
                                       color: Colors.grey, width: 0.7),
                                 ),
                                 elevation: 5,
                                 margin: EdgeInsets.symmetric(
                                     horizontal: 0, vertical: 10),
-                                child: Center(child: Text('BUY IT NOW!!')),
+                                child: Center(child: Text('Buy')),
                               ),
                             ),
                           ),

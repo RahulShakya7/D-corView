@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fyp/Controller/ProductController.dart';
 import 'package:fyp/Views/AllProducts.dart';
+import 'package:fyp/Views/CartPage.dart';
 import 'package:fyp/Views/ProductDetailsPage.dart';
-import 'package:fyp/Views/cartPage.dart';
 import 'package:get/get.dart';
 
 import '../Controller/CartController.dart';
@@ -11,7 +11,7 @@ import '../Widgets/SmallerDivider.dart';
 import 'ProductPageCategoryWise.dart';
 
 class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
+  const MainPage({super.key});
 
   @override
   State<MainPage> createState() => _MainPageState();
@@ -29,23 +29,30 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       endDrawer: NavDrawer(),
       appBar: AppBar(
+        toolbarHeight: 75,
         centerTitle: true,
-        title: const Text(
-          'Welcome',
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+        backgroundColor: Colors.green,
+        title: Container(
+          height: 85,
+          width: 70,
+          decoration: const BoxDecoration(shape: BoxShape.rectangle),
+          child: Image.asset(
+            'assets/logos/decorviewlogo.png',
+            fit: BoxFit.contain,
+          ),
         ),
         actions: [
-          //
-
           IconButton(
-              onPressed: () {
-                Get.to(() => const Cart());
-              },
-              icon: const Icon(Icons.add_shopping_cart)),
-
+            onPressed: () {
+              Get.to(() => const Cart());
+            },
+            icon: const Icon(Icons.add_shopping_cart),
+            alignment: Alignment.center,
+          ),
           Builder(builder: (context) {
             return IconButton(
               icon: const Icon(Icons.settings),
+              alignment: Alignment.center,
               onPressed: () {
                 Scaffold.of(context).openEndDrawer();
               },
@@ -84,6 +91,7 @@ class _MainPageState extends State<MainPage> {
                             height: 75.0,
                             width: 100,
                             child: InkWell(
+                                splashColor: Colors.transparent,
                                 onTap: () {
                                   Get.to(() => const ProductPageCategoryWise(),
                                       arguments: [
@@ -91,11 +99,6 @@ class _MainPageState extends State<MainPage> {
                                             .toString()
                                       ]);
                                 },
-                                // child: Card(elevation: 8,
-                                //   shape:  OutlineInputBorder(
-                                //       borderRadius: BorderRadius.circular(60),
-                                //       borderSide: BorderSide(color: Colors.black26)
-                                //   ),
                                 child: CircleAvatar(
                                     backgroundImage: NetworkImage(
                                   product.categories[index]['imageUrl']
@@ -141,8 +144,8 @@ class _MainPageState extends State<MainPage> {
                           ? 6
                           : product.products.length,
                       //itemCount: product.products.length,
-
                       itemBuilder: (context, index) => InkWell(
+                        splashColor: Colors.transparent,
                         onTap: () {
                           Get.to(() => const ProductDetails(), arguments: [
                             '${product.products[index].name}',
@@ -155,7 +158,7 @@ class _MainPageState extends State<MainPage> {
                         child: Card(
                           elevation: 8,
                           shadowColor:
-                              Get.isDarkMode ? Colors.black45 : Colors.black45,
+                              Get.isDarkMode ? Colors.white : Colors.black,
                           margin: const EdgeInsets.all(6),
                           shape: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
@@ -167,7 +170,7 @@ class _MainPageState extends State<MainPage> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Container(
+                                SizedBox(
                                   height: 110,
                                   width: 110,
                                   child: Image.network(
@@ -189,7 +192,7 @@ class _MainPageState extends State<MainPage> {
                                       style: const TextStyle(fontSize: 16),
                                     ),
                                     Text(
-                                      '\Rs ${product.products[index].price.toString()} \t',
+                                      'Rs ${product.products[index].price.toString()} \t',
                                       style: const TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold,

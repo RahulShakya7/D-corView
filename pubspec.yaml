@@ -53,6 +53,7 @@ dependencies:
   csc_picker: ^0.2.7
   file: 7.0.0
   firebase_auth_platform_interface: ^7.0.9
+  another_flutter_splash_screen: ^1.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -76,8 +77,13 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
+
   assets:
-    - images/
+    - assets/logos/decorviewlogo.png
+    - assets/images/noOrders.png
+    - assets/images/fb.png
+    - assets/images/google.png
+    - assets/images/emptycart.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

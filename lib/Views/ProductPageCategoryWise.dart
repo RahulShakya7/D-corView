@@ -81,7 +81,7 @@ class _ProductPageCategoryWiseState extends State<ProductPageCategoryWise> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Container(
+                            SizedBox(
                                 height: 110,
                                 width: 110,
                                 child: Image.network(prods[index]['imageUrl'])
